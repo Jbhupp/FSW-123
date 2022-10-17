@@ -1,6 +1,4 @@
-//import logo from './logo.svg';
-//import './App.css';
-
+//import Todo list
 import Todo from "./todo";
 
 function ToDoList(props) {
