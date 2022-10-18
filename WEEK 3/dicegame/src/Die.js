@@ -8,3 +8,4 @@ const Die = ({face}) => {
 };
 
 export default Die;
+

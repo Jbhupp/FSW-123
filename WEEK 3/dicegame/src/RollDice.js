@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Die from './Die';
 import './RollDice.css';
 
-const RollDice = ({sides}) => {
-    const[state, setState]= useState({
+
+
+
+function RollDice({ sides }) {
+    const [state, setState] = useState({
         rolling: false,
         totalScores: "",
     });
@@ -11,13 +14,13 @@ const RollDice = ({sides}) => {
     const [die1] = useState('one');
     const [die2] = useState('one');
 
-    const {rolling, totalScore} = state;
+    const { rolling, totalScore } = state;
 
-    const roll = () => {
+    function roll() {
         const newDie1 = sides[Math.floor(Math.random() * sides.length)];
         const newDie2 = sides[Math.floor(Math.random() * sides.length)];
 
-        const score1 =Object.values(newDie1);
+        const score1 = Object.values(newDie1);
         const score2 = Object.values(newDie2);
 
         setState({
@@ -28,26 +31,26 @@ const RollDice = ({sides}) => {
         });
 
         setTimeout(() => {
-            setState((prevState) => ({...prevState, rolling: false,}))
+            setState((prevState) => ({ ...prevState, rolling: false, }));
         }, 1000);
-    };
+    }
 
     return (
         <>
-        <div className= "roll-dice">
-            <div className= "rolldice-container">
-                <Die face= {String(die1)}/>
-                <Die face= {String(die2)}/>
-        </div>
-        <button onClick= {roll} disabled= {rolling}>
-            {rolling ? "Rolling..." : "Roll Dice" }
-        </button>
-        <h2>Your Score is: {totalScore}</h2>
-        </div>
-        
+            <div className="roll-dice">
+                <div className="rolldice-container">
+                    <Die faces={String(die1)} />
+                    <Die faces={String(die2)} />
+                </div>
+                <button onClick={roll} disabled={rolling}>
+                    {rolling ? "Rolling..." : "Roll Dice"}
+                </button>
+                <h2>Your Score: {totalScore}</h2>
+            </div>
+
         </>
     );
-};
+}
 
 RollDice.defaultProps = {
     sides: [
@@ -62,3 +65,5 @@ RollDice.defaultProps = {
 };
 
 export default RollDice;
+
+
