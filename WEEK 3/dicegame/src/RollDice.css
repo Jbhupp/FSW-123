@@ -1,31 +1,36 @@
-.roll-dice{
+.RollDice{
     display: flex;
     flex-flow: column nowrap;
-    min-height: 10rem;
-}
-.rolldice-container{
+    min-height: 100vh;
+    }
+    
+    /* Shows each dice in one row */
+    .RollDice-container{
     display: flex;
     justify-content: center;
     align-content: center;
-   
-}
-.roll-dice button{
-    width: 10em;
-    padding: 1.5em;
+    }
+    /* Styling rolldice button */
+    .RollDice button{
+    width:15em;
+    padding:1.5em;
     border: 0px;
     border-radius: 10px;
-    color: white;
-    background-color: purple;
+    color:white;
+    background-color:black;
     margin-top: 3em;
     align-self: center;
-    font-weight: bolder;
-}
-.roll-dice button:hover{
+    }
+    
+    /* Setting hover effect on button */
+    .RollDice button:hover{
     cursor: pointer;
-}
-.roll-dice rolling{
+    }
+    
+    .RollDice-rolling{
     border: 0px;
     border-radius: 10px;
-    background-color: darkslateblue !important;
-    opacity: 0.7;
-}
+    background-color:darkslateblue !important;
+    opacity:0.7
+    }
+    
