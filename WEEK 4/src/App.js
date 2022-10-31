@@ -14,7 +14,7 @@ function App(){
     // console.log(text)
     var newTodo = {text: text, id: uuid(), isComplete: false}
     const updatedTodos = [...todos, newTodo];
-    // console.log(newTodo)
+    console.log(newTodo)
     // console.log(updatedTodos)
     setToDo(updatedTodos);
   }
@@ -34,7 +34,7 @@ function App(){
   }
   return(
     <div>
-    < ToDoList todos = {todos} key={todos.id} deleteTodo={deleteTodo} addToDo={addTodo} complete={completeTodo}/>
+    < ToDoList todos = {todos} key={todos.id} deleteTodo={deleteTodo} addTodo={addTodo} complete={completeTodo}/>
     </div>
   )
 }

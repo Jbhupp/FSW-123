@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-function ToDoForm ({ addTodo }){
+function ToDoForm  ({ addTodo }) {
 
     const initialInputs = {text: ""}
     const [inputs, setInputs] = useState(initialInputs);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("")
 
 
     const handleChange = (e) => {
@@ -21,18 +21,27 @@ function ToDoForm ({ addTodo }){
                 setErrorMessage(msg)
                 return;
         } else{
+            
             addTodo(inputs.text);
-            setInputs(initialInputs);
+            setInputs(initialInputs)
+            
+            
         }
+        //console.log(addTodo)
     }
+
     return (
-        
+
+       
         <form> 
-            <input type={"text"} name={"text"} value={inputs.text} onChange={handleChange} required= "required"/> {errorMessage}
+            <input type={"text"} name={"text"} value={inputs.text} onChange={handleChange} required= "required"/> 
 
             <button type= "submit" onClick={handleSubmit}>Add To Do</button>
+            <div>{errorMessage}</div>
         </form>
     );
-};
+    }
+
 
 export default ToDoForm;
+
