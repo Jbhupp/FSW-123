@@ -36,7 +36,7 @@ function ToDoForm  ({ addTodo, children, buttonText, todo}) {
         <form> 
             <input type={"text"} name={"text"} value={inputs.text} onChange={handleChange} required= "required"/> 
 
-           
+          
              <button type= "submit" onClick={handleSubmit}>{buttonText}</button>
             {children}
             <div>{errorMessage}</div>
